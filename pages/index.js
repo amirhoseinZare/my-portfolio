@@ -22,8 +22,7 @@ export default function Home() {
       <Script strategy="beforeInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/slick.1.8.1.js"/>
       <Script strategy="afterInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/slider.js"/>
       <Script strategy="afterInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/sphere.js"/>
-      <Script strategy="lazyOnload" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/document.js"/>
-
+      <Script strategy="afterInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/document.js"/>
 
       <div className="hero">
             <div className="hero-background__vawe--bottom">
