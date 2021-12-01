@@ -15,9 +15,9 @@ export default function Home() {
       </Head>
       <Script src=""/>
       <Script src=""/>
-      <Script src=""/>
-      <Script src=""/>
-      <Script src=""/>
+      <Script src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/slider.js"/>
+      <Script src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/sphere.js"/>
+      <Script src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/document.js"/>
       <Script src=""/>
       <div className="hero">
             <div className="hero-background__vawe--bottom">
