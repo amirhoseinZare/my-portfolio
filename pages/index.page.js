@@ -10,7 +10,8 @@ import Contact from "./comps/Contact.jsx"
 import Footer from "./comps/Footer.jsx"
 import Customize from "./comps/Customize.jsx"
 
-import {connectToDB} from "../core/server/db"
+import {connectToDB} from "../server/db"
+import SkillModel from "../server/models/skill.model.js"
 
 export default function Home(props) {
   console.log(props.test)
@@ -52,8 +53,17 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(){
-  connectToDB()
+  try {
+    const db = await connectToDB()
+    const allSkills = await SkillModel.find({})
+    console.log(allSkills)
+  } catch (error) {
+    console.log(error)
+  }
   return {
-    props:{ test:"test" }
+    props:{ 
+      test:"test",
+      revalidate: 1000
+    }
   }
 }

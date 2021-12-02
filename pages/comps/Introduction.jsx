@@ -1,4 +1,4 @@
-export default function Introduction (){
+function Introduction (){
     return (
         <section id="introduction">
             <div className="introduction-header--container">
@@ -11,3 +11,5 @@ export default function Introduction (){
         </section>
     )
 }
+
+export default Introduction

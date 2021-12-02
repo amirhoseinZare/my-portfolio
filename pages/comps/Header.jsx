@@ -1,6 +1,6 @@
 import HeaderContactSvg from "../../public/svg/HeaderContact.svg"
 
-export default function Header(){
+function Header(){
     return (
         <header className="header ">
             <div className="nav-contacts">
@@ -40,3 +40,5 @@ export default function Header(){
         </header>
     )
 }
+
+export default Header

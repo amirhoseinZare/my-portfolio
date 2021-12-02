@@ -1,4 +1,4 @@
-export default function Hero(){
+function Hero(){
     return (
         <div className="hero">
             <div className="hero-background__vawe--bottom">
@@ -21,3 +21,5 @@ export default function Hero(){
     
         </div>)
 }
+
+export default Hero

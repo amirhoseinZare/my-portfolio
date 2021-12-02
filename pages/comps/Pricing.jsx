@@ -1,4 +1,4 @@
-export default function Pricing(){
+function Pricing(){
     return (
         <section id="pricing">
             <div className="pricing-items">
@@ -48,3 +48,5 @@ export default function Pricing(){
         </section>
     )
 }
+
+export default Pricing

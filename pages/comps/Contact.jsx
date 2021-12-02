@@ -1,4 +1,4 @@
-export default function Contact (){
+function Contact (){
     return (
         <section id="contact">
             <h3 className="contact-form__header has-text-content change-custom--selection">Get in touch</h3>
@@ -38,3 +38,5 @@ export default function Contact (){
         </section>
     )
 }
+
+export default Contact

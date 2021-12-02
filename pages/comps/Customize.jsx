@@ -1,4 +1,4 @@
-export default function Customize(){
+function Customize(){
     return (
          <div className="customize">
             <div className="customize-color">
@@ -25,3 +25,5 @@ export default function Customize(){
         </div>
     )
 }
+
+export default Customize

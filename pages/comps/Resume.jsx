@@ -1,4 +1,4 @@
-export default function Resume(){
+function Resume(){
     return (
          <section id="resume">
             <h2 className="header-resume change-custom--selection">resume</h2>
@@ -52,3 +52,5 @@ export default function Resume(){
         </section>
     )
 }
+
+export default Resume

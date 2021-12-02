@@ -1,6 +1,6 @@
 import AboutMeSvg from "../../public/svg/AboutMe.svg"
 
-export default function AboutMe(){
+function AboutMe(){
     return (
         <section id="aboutme" >
             <h1 className="aboutme--header change-custom--selection">About me</h1>
@@ -149,3 +149,5 @@ export default function AboutMe(){
         </section>
     )
 }
+
+export default AboutMe
