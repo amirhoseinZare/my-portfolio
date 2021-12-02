@@ -11,10 +11,9 @@ import Footer from "./comps/Footer.jsx"
 import Customize from "./comps/Customize.jsx"
 
 import {connectToDB} from "../server/db"
-import SkillModel from "../server/models/skill.model.js"
+import {getAllSkills} from "../services/skillService.js"
 
 export default function Home(props) {
-  console.log(props.test)
   return (
     <main>
 
@@ -41,7 +40,7 @@ export default function Home(props) {
       <Hero />
       <Header />
       <Introduction/>
-      <AboutMe />
+      <AboutMe skills={props.skills.filter(skill=>skill.showInProgress)}/>
       <Resume />
       <Pricing />
       <Contact />
@@ -53,17 +52,16 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(){
+  let allSkills = []
   try {
     const db = await connectToDB()
-    const allSkills = await SkillModel.find({})
-    console.log(allSkills)
+    allSkills = await getAllSkills(db)
   } catch (error) {
     console.log(error)
   }
   return {
-    props:{ 
-      test:"test",
-      revalidate: 1000
+    props:{
+      skills:allSkills,
     }
   }
 }

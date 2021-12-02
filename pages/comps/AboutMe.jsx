@@ -1,6 +1,7 @@
 import AboutMeSvg from "../../public/svg/AboutMe.svg"
 
-function AboutMe(){
+function AboutMe(props){
+    console.log(props)
     return (
         <section id="aboutme" >
             <h1 className="aboutme--header change-custom--selection">About me</h1>
@@ -96,54 +97,12 @@ function AboutMe(){
                 
                 </div>
                 <div className="skill-technology-items">
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-90"></div>
-                        <div className="skill-technology-item__name has-text-content">HTML5</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-70"></div>
-                        <div className="skill-technology-item__name has-text-content">CSS3</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-70"></div>
-                        <div className="skill-technology-item__name has-text-content">Javascript</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-70"></div>
-                        <div className="skill-technology-item__name has-text-content">jQuery</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-90"></div>
-                        <div className="skill-technology-item__name has-text-content">bootstrap</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar  width-p-60"></div>
-                        <div className="skill-technology-item__name has-text-content">React</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar  width-p-60"></div>
-                        <div className="skill-technology-item__name has-text-content">Redux</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-50"></div>
-                        <div className="skill-technology-item__name has-text-content">nextjs</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-90"></div>
-                        <div className="skill-technology-item__name has-text-content">Material-UI</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-70"></div>
-                        <div className="skill-technology-item__name has-text-content">NodeJS</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-70"></div>
-                        <div className="skill-technology-item__name has-text-content">MongoDB</div>
-                    </div>
-                    <div className="skill-technology-item">
-                        <div className="skill-technology-item__bar width-p-90"></div>
-                        <div className="skill-technology-item__name has-text-content">Sass</div>
-                    </div>
+                    {props.skills.map(({id, name, percent})=>(
+                        <div key={id} className="skill-technology-item">
+                            <div className={`skill-technology-item__bar width-p-${percent}`}></div>
+                            <div className="skill-technology-item__name has-text-content">{name}</div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
