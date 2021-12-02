@@ -1,4 +1,4 @@
-// import '../styles/globals.css'
+import '../styles/globals.css'
 // import '../styles/bootstrap.css'
 // import '../styles/slicker.css'
 // import '../styles/animate.css'

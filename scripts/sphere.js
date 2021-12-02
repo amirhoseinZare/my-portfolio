@@ -497,28 +497,28 @@
     fetch('http://localhost:3000/api/sphere')
       .then(res=>res.json())
       .then(res=>{ 
-        console.log('injaaaaaaaaaaaaaaaaaaaaaaaaaaaa ')
-        texts=res.skills
+        console.log('injaaaaaaaaaaaaaaaaaaaaaaaaaaaa ',res.skills.map(skill=>skill.name))
+        texts=res.skills.map(skill=>skill.name)
+        var tc = TagCloud('.content', texts,{
+
+            // radius in px
+            radius: 100,
+        
+            // animation speed
+            // slow, normal, fast
+            maxSpeed: 'normal',
+            initSpeed: 'normal',
+        
+            // 0 = top
+            // 90 = left
+            // 135 = right-bottom
+            direction: 350,
+
+            // interact with cursor move on mouse out
+            keep: true
+            
+        });
        })
-    var tc = TagCloud('.content', texts,{
-
-      // radius in px
-      radius: 100,
-  
-      // animation speed
-      // slow, normal, fast
-      maxSpeed: 'normal',
-      initSpeed: 'normal',
-  
-      // 0 = top
-      // 90 = left
-      // 135 = right-bottom
-      direction: 350,
-
-      // interact with cursor move on mouse out
-      keep: true
-      
-  });
 
     // switch style
     // add / remove tag

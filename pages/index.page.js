@@ -25,7 +25,7 @@ export default function Home(props) {
           <link rel="alternate icon" href="/images/logo.svg" />
           <link strategy="beforeInteractive" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/styles/bootstrap.css" />
           <link strategy="beforeInteractive" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/styles/animate.css"/>
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/styles/globals.css" />
+          {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/styles/globals.css" /> */}
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/styles/slicker.css" />
           <title>Amirhosein Zare</title>
           <meta name="description" content="Amirhosein Zare Portfolio" />
@@ -35,14 +35,14 @@ export default function Home(props) {
       <Script strategy="beforeInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/jquery.3.5.1.js"/>
       <Script strategy="beforeInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/slick.1.8.1.js"/>
       <Script strategy="afterInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/slider.js"/>
-      <Script strategy="afterInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/sphere.js"/>
+      <Script strategy="afterInteractive" src="https://res.cloudinary.com/ddybs491a/raw/upload/v1638459625/sphere_f2haf9.js"/>
       <Script strategy="afterInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/document.js"/>
 
       <Hero />
       <Header />
       <Introduction/>
       <AboutMe skills={props.skills.filter(skill=>skill.showInProgress)}/>
-      <Resume />
+      <Resume projects={props.projects}/>
       <Pricing />
       <Contact />
       <Footer />
