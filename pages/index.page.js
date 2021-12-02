@@ -12,6 +12,7 @@ import Customize from "./comps/Customize.jsx"
 
 import {connectToDB} from "../server/db"
 import {getAllSkills} from "../services/skillService.js"
+import {getAllProjects} from "../services/projectService.js"
 
 export default function Home(props) {
   return (
@@ -53,15 +54,18 @@ export default function Home(props) {
 
 export async function getStaticProps(){
   let allSkills = []
+  let allProjects = []
   try {
     const db = await connectToDB()
-    allSkills = await getAllSkills(db)
+    allSkills = await getAllSkills()
+    allProjects = await getAllProjects()
   } catch (error) {
     console.log(error)
   }
   return {
     props:{
       skills:allSkills,
+      projects:allProjects
     }
   }
 }

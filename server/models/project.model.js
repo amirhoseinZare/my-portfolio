@@ -1,15 +1,20 @@
-// import mongoose, {Schema} from "mongoose"
+import mongoose, {Schema} from "mongoose"
 
-// const schema = new Schema(
-//   {
-//     name: { type: String, required: true },
-//     percent: { type: Number, required:true },
-//     showInProgress : { type:Boolean, required:true },
-//     showInSphere : { type:Boolean, required:true }
-//   },
-//   { timestamps: true }
-// );
+const schema = new Schema(
+  {
+    image:{ type: String, required: true },
+    title: { 
+        fa:{ type: String, required: true },
+        en:{ type: String, required: true }
+    },
+    description: { 
+        fa:{ type: String, required: true },
+        en:{ type: String, required: true }
+    },
+  },
+  { timestamps: true }
+);
 
-// const SkillModel = mongoose.model("Skill", schema);
+const Project = mongoose.model("Project", schema);
 
-// export default SkillModel;
+export default Project;
