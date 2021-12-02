@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
+
 import Hero from './comps/Hero.jsx'
 import Header from "./comps/Header.jsx"
 import Introduction from "./comps/Introduction.jsx"

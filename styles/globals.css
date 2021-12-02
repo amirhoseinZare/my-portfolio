@@ -843,6 +843,7 @@ body {
 .contact-form__message {
   width:100%;
   position: relative;
+  margin-bottom:40px;
 }
 
 #contactMessage {

@@ -1,36 +1,129 @@
+import { useReducer, useRef, useEffect, useMemo, useState } from "react";
+import validators , { validate } from "../../core/validators"
+import strings from "../../core/strings"
+
 function Contact (){
+
+    const inputNames = useMemo(
+        () => ({
+            name: {
+                name: "name",
+                validators: [validators.require()],
+                label: strings.contact.name,
+                isRequired: true,
+            },
+            mobile: {
+                name: "mobile",
+                validators: [validators.require(), validators.mobile()],
+                label: strings.contact.mobile,
+                isRequired: true,
+            },
+            message: {
+                name: "message",
+                validators: [validators.require()],
+                label: strings.contact.message,
+                isRequired: true,
+            },
+            email: {
+                name: "email",
+                validators: [validators.require(), validators.email()],
+                label: strings.contact.email,
+                isRequired: true,
+            }
+        }),
+        []
+    );
+
+    const initState = useMemo(() => {
+        let initState = {};
+        for (let k of Object.keys(inputNames)) {
+          switch (k) {
+            default:
+              initState[inputNames[k].name] = {
+                value:  "",
+                error: false,
+                message: "",
+              };
+              break;
+          }
+        }
+        return initState;
+    }, []);
+
+    const [input, setInput] = useReducer(
+        (state, newState) => ({ ...state, ...newState }),
+        initState
+    );
+
+    const onChange = (e) => {
+        const { value, name } = e.target;
+        setInput({ [name]: { value: value, error: false, message: "" } });
+    };
+
+    const validateModel = () => {
+        let isValid = true;
+        for (let k in inputNames) {
+            let result = validate(input[k].value, inputNames[k].validators);
+            if (!result.isValid) {
+                isValid = false;
+                setInput({
+                    [k]: { value: input[k].value, error: true, message: result.message },
+                });
+            }
+        }
+        return isValid;
+    };
+
+    const resetForm = ()=>{
+        for (let k of Object.keys(inputNames)) {
+            setInput({
+                [k]: { value: '', error: false, message: '' },
+            });
+        }
+    }
+
+    const submitHandler = (e)=>{
+        if (!validateModel()) return;
+        let model = Object.keys(inputNames).reduce(
+            (acc, k) => ({ ...acc, [k]: input[k].value }),
+                {}
+        );
+        // console.log()
+        // addAlert(model)
+    }
+
     return (
         <section id="contact">
             <h3 className="contact-form__header has-text-content change-custom--selection">Get in touch</h3>
             <div className="contact-form">
-                <form noValidate>
+                <form noValidate onSubmit={submitHandler}>
                     <div className="contact-form__name__email">
                         <div className="contact-form__name__email-items has-text-content" >
-                            <div className="contact-form__label has-text-content"><label className="input-text-color--picker has-text-content change-custom--selection" htmlFor="contact-form__email">email</label></div>
-                            <input id="contact-form__email" type="email" className="contact-form__email" name="email" required />
-                            <div className="form-invalid--feedback">feedback</div>
+                            <div className="contact-form__label has-text-content"><label className="input-text-color--picker has-text-content change-custom--selection" htmlFor={inputNames.email.name}>email</label></div>
+                            <input id={inputNames.email.name} type="email" className="contact-form__email" name={inputNames.email.name} required onChange={onChange} />
+                            {input.email.error && <div className="form-invalid--feedback">{input.email.message}</div>}
                         </div>
                         <div  className="contact-form__name__email-items has-text-content" style={{textAlign: "right"}}>
-                            <div className="contact-form__label has-text-content"><label className="input-text-color--picker has-text-content change-custom--selection " htmlFor="contact-form__name ">name</label></div>
-                            <input id="contact-form__name" type="text" className="contact-form__name" name="name" required />
-                            <div className="form-invalid--feedback">feedback</div>
+                            <div className="contact-form__label has-text-content"><label className="input-text-color--picker has-text-content change-custom--selection" htmlFor={inputNames.name.name}>name</label></div>
+                            <input id={inputNames.name.name} type="text" className="contact-form__name" name={inputNames.name.name} required onChange={onChange} />
+                            {input.name.error && <div className="form-invalid--feedback">{input.name.message}</div>}
                         </div>
                     </div>
                     <div className="contact-form__title has-text-content">
                         <div className="contact-form__title--items has-text-content">
-                            <label htmlFor="form-contact__title" className="input-text-color--picke has-text-contentr change-custom--selection">phone</label>
+                            <label htmlFor="form-contact__title" className="input-text-color--picke has-text-contentr change-custom--selection" style={{ color: 'var(--header-bg-colour)'}}>phone</label>
                         </div>
                         <div className="contact-form__title--items" style={{direction: "ltr !important"}}>
-                            <input id="form-contact__title" type="phone" className="form-contact__title" name="phone" required />
-                            <div className="form-invalid--feedback">feedback</div>
+                            <input id="form-contact__title" type="phone" className="form-contact__title" name={inputNames.mobile.name} required onChange={onChange} />
+                            {input.mobile.error && <div className="form-invalid--feedback">{input.mobile.message}</div>}
                         </div>
                     </div>
                     <div className="contact-form__message has-text-content">
                         <div className="contact-form__label has-text-content">
                             <label className="input-text-color--picker has-text-content change-custom--selection" htmlFor="contactMessage">message</label>
                         </div>
-                        <textarea id="contactMessage" cols="30" rows="10" name="message" required ></textarea>
-                        <div className="form-invalid--feedback">feedback</div>
+                        <textarea id="contactMessage" cols="30" rows="10" name={inputNames.message.name} required onChange={onChange}></textarea>
+                        {input.message.error && <div className="form-invalid--feedback">{input.message.message}</div>}
                     </div>
                     <button type="submit" className="form-contact__button change-custom--selection">send</button>
                 </form>

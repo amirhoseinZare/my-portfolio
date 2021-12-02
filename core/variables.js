@@ -1,12 +1,20 @@
 export default {
     request:{
         method:{
-            GET:"GET"
+            GET:"GET",
+            POST:"POST"
+        },
+        response:{
+            "200":"ok"
         }
     },
     error:{
         messages:{
-            "400":"Bad Request"
+            "400":"Bad Request",
         }
+    },
+    general:{
+        unknownIp:"unknown",
+        unknownUserAgent:"unknown"
     }
 }

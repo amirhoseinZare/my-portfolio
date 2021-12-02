@@ -333,20 +333,20 @@ setInterval(()=>{
 mobileNavItemsDiv.classList.add("d-none")
 
 
-const form = document.forms[0];
+// const form = document.forms[0];
 
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries())
-  const body = JSON.stringify(data)
-  fetch("https://some.endpoint.dev", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-    .then(/**/)
-    .catch(/**/);
-});
+// form.addEventListener("submit", function(event) {
+//   event.preventDefault();
+//   const formData = new FormData(this);
+//   const data = Object.fromEntries(formData.entries())
+//   const body = JSON.stringify(data)
+//   fetch("https://some.endpoint.dev", {
+//     method: "POST",
+//     body: JSON.stringify(data),
+//     headers: {
+//       "Content-Type": "application/json"
+//     }
+//   })
+//     .then(/**/)
+//     .catch(/**/);
+// });
