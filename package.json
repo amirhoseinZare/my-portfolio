@@ -8,6 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^6.1.0",
+    "mongodb": "^4.2.1",
+    "mongoose": "^6.0.14",
     "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"
