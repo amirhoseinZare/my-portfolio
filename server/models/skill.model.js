@@ -10,6 +10,7 @@ const schema = new Schema(
   { timestamps: true }
 );
 
+mongoose.models = {};
 const SkillModel = mongoose.model("Skill", schema);
 
 export default SkillModel;

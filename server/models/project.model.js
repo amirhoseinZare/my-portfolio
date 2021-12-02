@@ -15,6 +15,7 @@ const schema = new Schema(
   { timestamps: true }
 );
 
+mongoose.models = {};
 const Project = mongoose.model("Project", schema);
 
 export default Project;

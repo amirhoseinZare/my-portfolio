@@ -316,7 +316,6 @@ aboutmePicturePerson.addEventListener("mouseout",(event)=>{
 })
 
 mobilNavButton.addEventListener("click",(event)=>{
-  console.log('heyyyy')
   if(mobileNavItemsDiv.classList.contains("d-none")){
     mobileNavItemsDiv.classList.add("d-flex")
     mobileNavItemsDiv.classList.remove("d-none")

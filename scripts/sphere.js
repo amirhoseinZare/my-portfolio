@@ -493,6 +493,13 @@
         'Redux', 'nextjs', 'Material-UI',
         'NodeJS','MongoDB',"Sass",
     ];
+    console.log('injaaaaaaaaaaaaaaaaaaaaaaaaaaaa 1')
+    fetch('http://localhost:3000/api/sphere')
+      .then(res=>res.json())
+      .then(res=>{ 
+        console.log('injaaaaaaaaaaaaaaaaaaaaaaaaaaaa ')
+        texts=res.skills
+       })
     var tc = TagCloud('.content', texts,{
 
       // radius in px

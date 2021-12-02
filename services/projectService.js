@@ -7,8 +7,10 @@ async function getAllProjects(){
         return {
             id:id.toString(),
             image,
-            description,
-            title,
+            descriptionFa:description.fa,
+            descriptionEn:description.en,
+            titleFa:title.fa,
+            titleEn:title.en,
         }
     })
     return allProjects

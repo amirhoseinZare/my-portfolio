@@ -1,7 +1,6 @@
 import AboutMeSvg from "../../public/svg/AboutMe.svg"
 
 function AboutMe(props){
-    console.log(props)
     return (
         <section id="aboutme" >
             <h1 className="aboutme--header change-custom--selection">About me</h1>
