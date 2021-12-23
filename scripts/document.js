@@ -48,49 +48,82 @@ const colorThemeItems = [...document.getElementsByClassName('color-theme--items'
 const languageItemIcons = [...document.getElementsByClassName('lang-item--icon')]
 const textIncludedElements = [...document.getElementsByClassName('has-text-content')]
 let chosenLanguage = 'en'
-// let dynamicStrings = {
-//   tmplateBase:[
-//     {
-//       element:document.getElementById('introduction'),
-//       template:`<div class="introduction-header--container"><h1 class="introduction-header animate__animated animate__rubberBand has-text-content">{}<span class="headet-text-color--picker has-text-content">{}</span></span><br/><span class="headet-text-color--picker has-text-content">{}</span>{}</h1></div><p class="introduction-text has-text-content" >{}<span class="headet-text-color--picker has-text-content">{}<a href="#contact"></a></span></p><button class="introduction-button has-text-content">{}</button>`,
-//       text:{
-//         en:["Hi I'm ", "Amirhossein Zare", "Front-End", " web developer", "I'm interested and experienced in web development . If you're a business <br/>seeking a web presence or are looking to hire, ", "contact me here.", "About Me"],
-//         fa:["سلام", " امیرحسین زارع هستم ", " یه فرانت اند ", "وب دولوپر", "اگه کسب و کاری هستی که دنبال استخدام یا همکاری هستی <br/>", "میتونی با من در ارتباط باشی", "درباره من"]
-//       }
-//     },
-//     {
-//       element:document.getElementsByClassName('aboutme--description')[0],
-//       template:`{}<span class="description-tex-color--picker has-text-content">{}</span>{}<span class="headet-text-color--picker description-text--bolder has-text-content">{}</span>{}<span class="headet-text-color--picker description-text--bolder has-text-content">{}</span>{}<span class="description-tex-color--picker has-text-content">{}</span>{}<span class="headet-text-color--picker description-text--bolder has-text-content">{}</span>{}<span class="description-tex-color--picker has-text-content">{}</span>{}<span class="headet-text-color--picker description-text--bolder has-text-content">{}</span>`,
-//       text:{
-//         en:["I worked with Front-End technologies a lot such as", " React, Javascript, Jquery, Css", " and related libraries like ", "Redux, Bootstrap, Material-UI ", "and I have good understanding of how to ", "Responsive Design"," and the technologies are used like ", "Css-grid, flexbox ", "and using other grid system designs such as ", " Bootstrap's grid system or material-UI's ", " and also have good understanding to how work with ", "restful api","  and using building tools like ", "Babel, Webpack"],
-//         fa:["تجربه ی خوبی توی کار با تکنولوژی های فرانت دارم مثل", "ری اکت جاوااسکریپت جی&zwnj;کوئری و سی&zwnj;اس&zwnj;اس ",
-//         "و کتابخونه های مرتبط مثل ", "ریداکس بوتسترپ متریال&zwnj;یو&zwnj;آی ",
-//         "و درک خوبی از چگونگی پیاده کردن "," طراحی ریسپانسیو ",
-//         "و تکنولوژی هایی که برای اینکار استفاده میشن مثل ", "سی&zwnj;اس&zwnj;اس", "فلکس باکس", "و استفاده کردن از گرید سیستم ها مثل ", "گرید سیستم بوتسرتپ یا متریال", " و همچنین توانایی کار کردن با ", "رست ای پی آي ", "رو دارم و تجربه کار با ابزارهایی مثل وبپک و ببل رو دارم."]
-//       }
-//     }
-//   ],
-//   straightBase:{
-//     child:{  
-//         elements:[...document.getElementsByClassName('nav-item'),...document.getElementsByClassName('mobile-nav--item'), ...document.getElementsByClassName('footer-item')],
-//         en:['AboutMe','Skills','Resume','Contact','AboutMe','Skills','Resume','Contact','Linkedin','GitHub','Email','Mobile',],
-//         fa:['درباره&zwnj;من', 'مهارت&zwnj;ها','رزومه', 'ارتباط','درباره&zwnj;من', 'مهارت&zwnj;ها','رزومه', 'ارتباط','لینکدین','گیتهاب','ایمیل','موبایل']
-//       },
-//     self:{
-//       elements:[...document.getElementsByClassName('change-custom--selection')],
-//       en:['email', 'name', 'title', 'message', 'send','color theme', 'language', 'an email has been sent to you. If you don\'t see that check your spam and All Mail boxes.'],
-//       fa:[
-//          ,'ایمیل'
-//          ,'اسم'
-//          ,'عنوان'
-//          , 'پیام'
-//          , 'ارسال'
-//          , 'رنگ&zwnj;تم'
-//          ,'زبان', 
-//         'یک ایمیل برای شما ارسال شد اگر آن را مشاهده نمیکنید صندوق spam یا all&zwnj;in&zwnj;box&zwnj; خود را چک کنید.']
-//     }
-//   }
-// }
+let dynamicStrings = {
+  tmplateBase:[
+    {
+      element:document.getElementById('introduction'),
+      template:`<div class="introduction-header--container"><h1 class="introduction-header animate__animated animate__rubberBand has-text-content">{}<span class="headet-text-color--picker has-text-content">{}</span></span><br/><span class="headet-text-color--picker has-text-content">{}</span>{}</h1></div><p class="introduction-text has-text-content" >{}<span class="headet-text-color--picker has-text-content">{}<a href="#contact"></a></span></p><button class="introduction-button has-text-content">{}</button>`,
+      text:{
+        en:[
+          "Hi I'm ",
+         "Amirhossein Zare",
+          "Front-End",
+           " web developer", 
+           "I'm interested and experienced in web development . If you're a business <br/>seeking a web presence or are looking to hire, ", "contact me here.", 
+           "About Me"],
+        fa:[
+          "سلام",
+           " امیرحسین زارع هستم ",
+            " یه فرانت اند ",
+            "وب دولوپر",
+           "اگه کسب و کاری هستی که دنبال استخدام یا همکاری هستی <br/>", 
+           "میتونی با من در ارتباط باشی"
+           , "درباره من"]
+      }
+    },
+    {
+      element:document.getElementsByClassName('aboutme--description')[0],
+      template:`{}<span class="description-tex-color--picker has-text-content">{}</span>{}<span class="headet-text-color--picker description-text--bolder has-text-content">{}</span>{}<span class="headet-text-color--picker description-text--bolder has-text-content">{}</span>{}<span class="description-tex-color--picker has-text-content">{}</span>{}<span class="headet-text-color--picker description-text--bolder has-text-content">{}</span>{}<span class="description-tex-color--picker has-text-content">{}</span>{}<span class="headet-text-color--picker description-text--bolder has-text-content">{}</span>`,
+      text:{
+        en:[
+          "I worked with Front-End technologies a lot such as", 
+          " React, Javascript, Jquery, Css",
+          " and related libraries like ", 
+          "Redux, Bootstrap, Material-UI ", 
+          "and I have good understanding of how to ", 
+          "Responsive Design"," and the technologies are used like ", 
+          "Css-grid, flexbox ", "and using other grid system designs such as ", 
+          " Bootstrap's grid system or material-UI's ", 
+          " and also have good understanding to how work with ", 
+          "restful api",
+          "  and using building tools like ", 
+          "Babel, Webpack"],
+        fa:[
+          "تجربه ی خوبی توی کار با تکنولوژی های فرانت دارم مثل"
+          , "ری اکت جاوااسکریپت جی&zwnj;کوئری و سی&zwnj;اس&zwnj;اس ",
+        "و کتابخونه های مرتبط مثل "
+        , "ریداکس بوتسترپ متریال&zwnj;یو&zwnj;آی ",
+        "و درک خوبی از چگونگی پیاده کردن "
+        ," طراحی ریسپانسیو ",
+        "و تکنولوژی هایی که برای اینکار استفاده میشن مثل "
+        , "سی&zwnj;اس&zwnj;اس", "فلکس باکس", "و استفاده کردن از گرید سیستم ها مثل "
+        , "گرید سیستم بوتسرتپ یا متریال"
+        , " و همچنین توانایی کار کردن با ", "رست ای پی آي "
+        , "رو دارم و تجربه کار با ابزارهایی مثل وبپک و ببل رو دارم."]
+      }
+    }
+  ],
+  straightBase:{
+    child:{  
+        elements:[...document.getElementsByClassName('nav-item'),...document.getElementsByClassName('mobile-nav--item'), ...document.getElementsByClassName('footer-item')],
+        en:['AboutMe','Skills','Resume','Contact','AboutMe','Skills','Resume','Contact','Linkedin','GitHub','Email','Mobile',],
+        fa:['درباره&zwnj;من', 'مهارت&zwnj;ها','رزومه', 'ارتباط','درباره&zwnj;من', 'مهارت&zwnj;ها','رزومه', 'ارتباط','لینکدین','گیتهاب','ایمیل','موبایل']
+      },
+    self:{
+      elements:[...document.getElementsByClassName('change-custom--selection')],
+      en:['email', 'name', 'title', 'message', 'send','color theme', 'language', 'an email has been sent to you. If you don\'t see that check your spam and All Mail boxes.'],
+      fa:[
+         ,'ایمیل'
+         ,'اسم'
+         ,'عنوان'
+         , 'پیام'
+         , 'ارسال'
+         , 'رنگ&zwnj;تم'
+         ,'زبان', 
+        'یک ایمیل برای شما ارسال شد اگر آن را مشاهده نمیکنید صندوق spam یا all&zwnj;in&zwnj;box&zwnj; خود را چک کنید.']
+    }
+  }
+}
 
 const replaceString = (string, words) => {
   for(const word of words){

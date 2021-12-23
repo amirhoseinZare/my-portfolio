@@ -9,7 +9,14 @@
         "Contact":"Contact"
     },
     "Introduction":{
-
+        "FullName":"Amirhosein Zare",
+        "Hello":"Hi I'm ",
+        "FrontEnd":"front-end",
+        "WebDeveloper":"web developer",
+        "Description":"I'm interested and experienced in web development . If you're a business ",
+        "Seeking":"seeking a web presence or are looking to hire, ",
+        "ContactMe":"contact me here.",
+        "AboutMe":"about me"
     },
     "AboutMe":{
 
