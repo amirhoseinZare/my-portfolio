@@ -19,7 +19,20 @@
         "AboutMe":"about me"
     },
     "AboutMe":{
-
+        "Worked":"I worked with Front-End technologies a lot such as",
+        "SuchAs":" React, Javascript, Jquery, Css",
+        "RelatedLibraries":" and related libraries like ",
+        "HighTechs":"Redux, Bootstrap, Material-UI ",
+        "GoodUnderstanding":"and I have good understanding of how to ",
+        "RWD":"Responsive Design",
+        "RWDTechs":" and the technologies are used like ",
+        "GridFlex":"Css-grid, flexbox ",
+        "Other":"and using other grid system designs such as ",
+        "Bootstrap":" Bootstrap grid system or material-UI's ",
+        "GoodUnderstand":" and also have good understanding to how work with ",
+        "ResfulApis":"restful apis",
+        "BuildTools":"and using building tools like ",
+        "BabelWebpack":"Babel, Webpack."
     },
     "Resume":{
 
