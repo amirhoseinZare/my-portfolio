@@ -1,0 +1,32 @@
+{
+    "Hero":{
+
+    },
+    "Header":{
+        "AboutMe":"AboutMe",
+        "Skills":"Skills",
+        "Resume":"Resume",
+        "Contact":"Contact"
+    },
+    "Introduction":{
+
+    },
+    "AboutMe":{
+
+    },
+    "Resume":{
+
+    },
+    "Pricing":{
+
+    },
+    "Contact":{
+
+    },
+    "Footer":{
+
+    },
+    "Customize":{
+
+    }
+}

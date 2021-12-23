@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next"
 import HeaderContactSvg from "../../public/svg/HeaderContact.svg"
 
 function Header(){
+    const {t} = useTranslation()
     return (
         <header className="header ">
             <div className="nav-contacts">
@@ -20,10 +22,10 @@ function Header(){
             </div>
 
             <nav className="nav-items">
-                <div className="nav-item has-text-content"><a href="#aboutme">AboutMe</a></div>
-                <div className="nav-item has-text-content"><a href="#skills">Skills</a></div>
-                <div className="nav-item has-text-content"><a href="#resume">Resume</a></div>
-                <div className="nav-item has-text-content"><a href="#contact">Contact</a></div>
+                <div className="nav-item has-text-content"><a href="#aboutme">{t("Header.AboutMe")}</a></div>
+                <div className="nav-item has-text-content"><a href="#skills">{t("Header.Skills")}</a></div>
+                <div className="nav-item has-text-content"><a href="#resume">{t("Header.Resume")}</a></div>
+                <div className="nav-item has-text-content"><a href="#contact">{t("Header.Contact")}</a></div>
                 <div className="nav-item--mobile">
                     <svg className="bi bi-card-list nav-item--mobile__item" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>

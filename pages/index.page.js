@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import Script from 'next/script'
 
+//libs
+import "../Config/i18n";
+
+//comps
 import Hero from './comps/Hero.jsx'
 import Header from "./comps/Header.jsx"
 import Introduction from "./comps/Introduction.jsx"
@@ -11,6 +15,7 @@ import Contact from "./comps/Contact.jsx"
 import Footer from "./comps/Footer.jsx"
 import Customize from "./comps/Customize.jsx"
 
+//server & services
 import {connectToDB} from "../server/db"
 import {getAllSkills} from "../services/skillService.js"
 import {getAllProjects} from "../services/projectService.js"

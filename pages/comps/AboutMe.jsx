@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next"
+import i18 from "../../config/i18n/index"
 import AboutMeSvg from "../../public/svg/AboutMe.svg"
 
 function AboutMe(props){
+    const { t } = useTranslation()
     return (
         <section id="aboutme" >
             <h1 className="aboutme--header change-custom--selection">About me</h1>
@@ -90,7 +93,7 @@ function AboutMe(props){
                 </div>
             </div>
 
-            <h1 id="skills" className="skill-items__header has-text-content change-custom--selection">Skills</h1>
+            <h1 id="skills" className="skill-items__header has-text-content change-custom--selection">{t("aboutMe.skills")}</h1>
             <div className="skill-items">
                 <div className="content" dir="rtl">
                 

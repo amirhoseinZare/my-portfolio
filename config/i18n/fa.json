@@ -1,0 +1,32 @@
+{
+    "Hero":{
+        
+    },
+    "Header":{
+        "AboutMe":"درباره من",
+        "Skills":"مهارت ها",
+        "Resume":"رزومه",
+        "Contact":"راه ارتباطی"
+    },
+    "Introduction":{
+
+    },
+    "AboutMe":{
+
+    },
+    "Resume":{
+
+    },
+    "Pricing":{
+
+    },
+    "Contact":{
+
+    },
+    "Footer":{
+
+    },
+    "Customize":{
+
+    }
+}
