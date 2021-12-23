@@ -34,10 +34,10 @@ function Header(){
                 </div>
             </nav>
             <div className="mobile-nav--items">
-                <div className="mobile-nav--item has-text-content"><a href="#aboutme">AboutMe</a></div>
-                <div className="mobile-nav--item has-text-content"><a href="#skills">Skills</a></div>
-                <div className="mobile-nav--item has-text-content"><a href="#resume">Resume</a></div>
-                <div className="mobile-nav--item has-text-content"><a href="#contact">Contact</a></div>
+                <div className="mobile-nav--item has-text-content"><a href="#aboutme">{t("Header.AboutMe")}</a></div>
+                <div className="mobile-nav--item has-text-content"><a href="#skills">{t("Header.Skills")}</a></div>
+                <div className="mobile-nav--item has-text-content"><a href="#resume">{t("Header.Resume")}</a></div>
+                <div className="mobile-nav--item has-text-content"><a href="#contact">{t("Header.Contact")}</a></div>
             </div>
         </header>
     )

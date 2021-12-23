@@ -1,3 +1,5 @@
+import { lang } from "../../config"
+
 function Customize(){
     return (
          <div className="customize">
@@ -13,10 +15,10 @@ function Customize(){
             </div>
             <div className="customize-language">
                 <div className="lang--items">
-                    <div className="lang--item">
+                    <div onClick={()=>lang.toEn()} className="lang--item">
                         <img className="lang-item--icon selected-custom--item" data-lang="en" src="./images/en.png" alt="Fa" />
                     </div>
-                    <div className="lang--item">
+                    <div onClick={()=>lang.toFa()} className="lang--item">
                         <img className="lang-item--icon" data-lang="fa" src="./images/fa.png" alt="En" />
                     </div>
                 </div>

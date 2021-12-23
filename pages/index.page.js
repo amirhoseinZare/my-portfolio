@@ -42,7 +42,7 @@ export default function Home(props) {
       <Script strategy="beforeInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/slick.1.8.1.js"/>
       <Script strategy="afterInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/slider.js"/>
       <Script strategy="afterInteractive" src="https://res.cloudinary.com/ddybs491a/raw/upload/v1638459625/sphere_f2haf9.js"/>
-      <Script strategy="afterInteractive" src="https://cdn.jsdelivr.net/gh/amirhoseinZare/my-portfolio@main/scripts/document.js"/>
+      <Script strategy="afterInteractive" src="https://res.cloudinary.com/ddybs491a/raw/upload/v1640300227/document_yxuyxf.js"/>
 
       <Hero />
       <Header />

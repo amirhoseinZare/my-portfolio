@@ -4,8 +4,8 @@ const chngLangToFa = ()=>i18next.changeLanguage("fa")
 const chngLangToEn = ()=>i18next.changeLanguage("en")
 
 const lang = {
-    ToFa:chngLangToFa,
-    ToEn:chngLangToEn
+    toFa:chngLangToFa,
+    toEn:chngLangToEn
 }
 
 export {
