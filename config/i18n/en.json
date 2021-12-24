@@ -59,6 +59,7 @@
         "Mobile":"Mobile"
     },
     "Customize":{
-
+        "Language":"language",
+        "ColorTheme":"color theme"
     }
 }
