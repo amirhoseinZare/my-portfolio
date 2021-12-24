@@ -53,7 +53,10 @@
 
     },
     "Footer":{
-
+        "Linkedin":"Linkedin",
+        "GitHub":"GitHub",
+        "Email":"Email",
+        "Mobile":"Mobile"
     },
     "Customize":{
 

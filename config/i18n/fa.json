@@ -52,7 +52,10 @@
         "Send":"ارسال"
     },
     "Footer":{
-
+        "Linkedin":"لینکدین",
+        "GitHub":"گیتهاب",
+        "Email":"ایمیل",
+        "Mobile":"موبایل"
     },
     "Customize":{
 
