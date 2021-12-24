@@ -93,7 +93,7 @@ function AboutMe(props){
                 </div>
             </div>
 
-            <h1 id="skills" className="skill-items__header has-text-content change-custom--selection">{t("aboutMe.skills")}</h1>
+            <h1 id="skills" className="skill-items__header has-text-content change-custom--selection">{t("AboutMe.Skills")}</h1>
             <div className="skill-items">
                 <div className="content" dir="rtl">
                 

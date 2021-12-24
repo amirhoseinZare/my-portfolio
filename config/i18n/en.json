@@ -19,6 +19,7 @@
         "AboutMe":"about me"
     },
     "AboutMe":{
+        "Skills":"skills",
         "Worked":"I worked with Front-End technologies a lot such as",
         "SuchAs":" React, Javascript, Jquery, Css",
         "RelatedLibraries":" and related libraries like ",
@@ -35,12 +36,20 @@
         "BabelWebpack":"Babel, Webpack."
     },
     "Resume":{
-
+        "Resume":"resume"
     },
     "Pricing":{
-
+        "StaticWebsite":"Static Website",
+        "DynamicWebsite":"Dynamic Website",
+        "DynamicWebsite2":"Dynamic Website"
     },
     "Contact":{
+        "GetInTouch":"Get in touch",
+        "Email":"email",
+        "Name":"name",
+        "Phone":"phone",
+        "Message":"message",
+        "Send":"send"
 
     },
     "Footer":{

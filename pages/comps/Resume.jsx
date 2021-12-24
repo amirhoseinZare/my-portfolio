@@ -1,9 +1,11 @@
 import Image from "next/image"
+import { useTranslation } from "react-i18next"
 
 function Resume(props){
+    const { t } = useTranslation()
     return (
          <section id="resume">
-            <h2 className="header-resume change-custom--selection">resume</h2>
+            <h2 className="header-resume change-custom--selection">{t("Resume.Resume")}</h2>
             <div className="image-slider"  data-slick='{"slidesToShow": 3, "slidesToScroll": 3}' style={{display:"flex", justifyContent:"center"}}>
                 {props.projects.map(project=>{
                     return (

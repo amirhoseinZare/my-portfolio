@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next"
+
 function Pricing(){
+    const { t } = useTranslation()
     return (
         <section id="pricing">
             <div className="pricing-items">
                 <div className="pricing-item d-none">
                     <div className="pricing-item--up"></div>
                     <div className="pricing-item--left"></div>
-                    <div className="pricing-item--header has-text-content">Static Website</div>
+                    <div className="pricing-item--header has-text-content">{t("Pricing.StaticWebsite")}</div>
                     <ul className="pricing-item--plans">
                         <li className="pricing-item--plan has-text-content">Front-End</li>
                         <li className="pricing-item--plan has-text-content">HTML5, CSS3, javascript</li>
@@ -17,7 +20,7 @@ function Pricing(){
                 <div className="pricing-item d-none">
                     <div className="pricing-item--up"></div>
                     <div className="pricing-item--left"></div>
-                    <div className="pricing-item--header has-text-content">Dynamic Website</div>
+                    <div className="pricing-item--header has-text-content">{t("Pricing.DynamicWebsite")}</div>
                     <ul className="pricing-item--plans">
                         <li className="pricing-item--plan has-text-content">Front-End</li>
                         <li className="pricing-item--plan has-text-content">HTML5, CSS3, javascript</li>
@@ -31,7 +34,7 @@ function Pricing(){
                 <div className="pricing-item d-none">
                     <div className="pricing-item--up"></div>
                     <div className="pricing-item--left"></div>
-                    <div className="pricing-item--header has-text-content">Dynamic Website</div>
+                    <div className="pricing-item--header has-text-content">{t("Pricing.DynamicWebsite2")}</div>
                     <ul className="pricing-item--plans">
                         <li className="pricing-item--plan has-text-content">Front-End and Back-End</li>
                         <li className="pricing-item--plan has-text-content">HTML5, CSS3, javascript</li>
