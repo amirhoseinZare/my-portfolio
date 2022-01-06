@@ -120,7 +120,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   position: fixed;
-  right: 20px;
+  right: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -164,16 +164,16 @@ body {
   width:50%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: flex-end;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
   position: fixed;
   left:20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   vertical-align: middle;
   margin:0;
 }
@@ -315,8 +315,7 @@ body {
   position: relative;
   height: 76px;
   width: 100%;
-  margin-bottom: 1rem;
-
+  margin-bottom: 3rem;
 }
 
 .introduction-header {
@@ -331,6 +330,7 @@ body {
 
 .introduction-text {
   color:var(--nav-item-colour);
+  padding:0 16px;
 }
 
 .introduction-button {
@@ -490,6 +490,7 @@ body {
 .skill-technology-item__name {
   margin-right: 10px;
   text-align: right;
+  padding-left: 4px
 }
 
 .width-p-10 {
@@ -809,7 +810,7 @@ body {
 }
 
 #form-contact__title {
-  width:100%;
+  width:99%;
   height: 30px;
   border: none;
   border:solid 1px #ccc;
@@ -847,7 +848,7 @@ body {
 }
 
 #contactMessage {
-  width: 100%;
+  width: 96%;
   height: 300px;
   min-height: 300px;
   max-height: 500px;
@@ -874,6 +875,11 @@ body {
 .contact-form__name__email-items {
   width:100%;
 }
+
+.contact-form__name__email-items {
+  margin-left:8px;
+}
+
 .contact-form__email input,
 .contact-form__name input{
   width: 50%;
@@ -1154,7 +1160,11 @@ textarea {
 
 @media (max-width: 575.98px) { 
   body {
-      font-size: 14px;
+    font-size: 14px;
+  }
+
+  .introduction-header--container {
+    margin-bottom: 3rem;
   }
 
   #form-contact__title {
@@ -1196,7 +1206,7 @@ textarea {
   }
 
   .introduction-header--container {
-      margin-bottom: 5rem;
+    margin-bottom: 4.5rem;
   }
 
   .introduction-header {
@@ -1322,7 +1332,7 @@ textarea {
   .contact-form__name__email-items,
   .contact-form__email,
   .contact-form__name {
-      width: 100%;
+      width: 101%;
   }
 
   .aboutme {
@@ -1397,7 +1407,9 @@ textarea {
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) { 
-
+  .introduction-header--container {
+    margin-bottom: 2rem;
+  }
   #resume {
       margin-top: 700px;
   }

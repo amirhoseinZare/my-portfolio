@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "array-callback-return":["off", {"checkForEach": true}],
+    "arrow-body-style":"off",
+    "@next/next/no-img-element": "off"
+  }
 }
