@@ -1,4 +1,4 @@
-import { lang } from "../../config"
+import { lang } from "../../core/config"
 import { useTranslation } from "react-i18next"
 
 function Customize(){

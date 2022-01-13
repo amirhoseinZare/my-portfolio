@@ -1,4 +1,4 @@
-export default {
+const variables = {
     request:{
         method:{
             GET:"GET",
@@ -18,3 +18,5 @@ export default {
         unknownUserAgent:"unknown"
     }
 }
+
+export default variables

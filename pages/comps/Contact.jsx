@@ -84,6 +84,7 @@ function Contact (){
     }
 
     const submitHandler = (e)=>{
+        e.preventDefault();
         if (!validateModel()) return;
         let model = Object.keys(inputNames).reduce(
             (acc, k) => ({ ...acc, [k]: input[k].value }),

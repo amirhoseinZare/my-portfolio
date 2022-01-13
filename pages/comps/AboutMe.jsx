@@ -1,6 +1,4 @@
 import { useTranslation } from "react-i18next"
-import i18 from "../../config/i18n/index"
-import AboutMeSvg from "../../public/svg/AboutMe.svg"
 
 function AboutMe(props){
     const { t } = useTranslation()

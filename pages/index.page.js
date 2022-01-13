@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 //libs
-import "../config/i18n";
+import "../core/config/i18n";
 
 //comps
 import Hero from './comps/Hero.jsx'
