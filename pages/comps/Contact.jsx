@@ -1,9 +1,12 @@
-import { useReducer, useMemo } from "react";
+import { useReducer, useMemo, useEffect, useState } from "react";
 import validators , { validate } from "../../core/validators"
 import strings from "../../core/strings"
 import { useTranslation } from "react-i18next"
+import i18n from "../../core/config/i18n"
+import LanguageService from "../../services/languageService";
 
 function Contact (){
+    const [validated, setValidated] = useState(false)
     const { t } = useTranslation()
     const inputNames = useMemo(
         () => ({
@@ -55,6 +58,8 @@ function Contact (){
         (state, newState) => ({ ...state, ...newState }),
         initState
     );
+    
+    let language = LanguageService.getCurrent()
 
     const onChange = (e) => {
         const { value, name } = e.target;
@@ -62,6 +67,7 @@ function Contact (){
     };
 
     const validateModel = () => {
+        setValidated((!validated) ? true: false)
         let isValid = true;
         for (let k in inputNames) {
             let result = validate(input[k].value, inputNames[k].validators);
@@ -94,8 +100,16 @@ function Contact (){
         // addAlert(model)
     }
 
+    useEffect(()=>{
+        console.log(validated, language)
+        if(!validated)
+            return
+        validateModel()
+    }, [language])
+
     return (
         <section id="contact">
+            <p>{i18n.t("validation.required")}</p>
             <h3 className="contact-form__header has-text-content change-custom--selection">{t("Contact.GetInTouch")}</h3>
             <div className="contact-form">
                 <form noValidate onSubmit={submitHandler}>
