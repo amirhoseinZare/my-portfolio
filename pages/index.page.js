@@ -24,12 +24,8 @@ import Customize from "./comps/Customize.jsx"
 import {connectToDB} from "../server/db"
 import {getAllSkills} from "../services/skillService.js"
 import {getAllProjects} from "../services/projectService.js"
-import LanguageService from '../services/languageService'
 
 export default function Home(props) {
-
-  useEffect(()=>{
-  }, [])
 
   return (
     <main>

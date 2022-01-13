@@ -2,12 +2,12 @@ import { useReducer, useMemo, useEffect, useState } from "react";
 import validators , { validate } from "../../core/validators"
 import strings from "../../core/strings"
 import { useTranslation } from "react-i18next"
-import i18n from "../../core/config/i18n"
 import { useSelector } from "react-redux"
 
 function Contact (){
     const language = useSelector(state=>state.language)
     const [validated, setValidated] = useState(false)
+    const [direction, setDirection] = useState({direction:"ltr"})
     const { t } = useTranslation()
     const inputNames = useMemo(
         () => ({
@@ -101,7 +101,12 @@ function Contact (){
     }
 
     useEffect(()=>{
-        console.log(validated)
+        if(language.value==="fa"){
+            setDirection({direction:"rtl"})
+        }
+        else {
+            setDirection({direction:"ltr"})
+        }
         if(!validated)
             return
         validateModel()
@@ -109,23 +114,22 @@ function Contact (){
 
     return (
         <section id="contact">
-            <p>{i18n.t("validation.required")}</p>
             <h3 className="contact-form__header has-text-content change-custom--selection">{t("Contact.GetInTouch")}</h3>
             <div className="contact-form">
                 <form noValidate onSubmit={submitHandler}>
                     <div className="contact-form__name__email">
-                        <div className="contact-form__name__email-items has-text-content" >
+                        <div className="contact-form__name__email-items has-text-content" style={direction}>
                             <div className="contact-form__label has-text-content"><label className="input-text-color--picker has-text-content change-custom--selection" htmlFor={inputNames.email.name}>{t("Contact.Email")}</label></div>
                             <input id={inputNames.email.name} type="email" className="contact-form__email" name={inputNames.email.name} required onChange={onChange} />
                             {input.email.error && <div className="form-invalid--feedback">{input.email.message}</div>}
                         </div>
-                        <div  className="contact-form__name__email-items has-text-content" style={{textAlign: "right"}}>
+                        <div  className="contact-form__name__email-items has-text-content" style={{textAlign: "right", ...direction}}>
                             <div className="contact-form__label has-text-content"><label className="input-text-color--picker has-text-content change-custom--selection" htmlFor={inputNames.name.name}>{t("Contact.Name")}</label></div>
                             <input id={inputNames.name.name} type="text" className="contact-form__name" name={inputNames.name.name} required onChange={onChange} />
                             {input.name.error && <div className="form-invalid--feedback">{input.name.message}</div>}
                         </div>
                     </div>
-                    <div className="contact-form__title has-text-content">
+                    <div className="contact-form__title has-text-content" style={direction}>
                         <div className="contact-form__title--items has-text-content">
                             <label htmlFor="form-contact__title" className="input-text-color--picke has-text-contentr change-custom--selection" style={{ color: 'var(--header-bg-colour)'}}>{t("Contact.Phone")}</label>
                         </div>
@@ -135,7 +139,7 @@ function Contact (){
                         </div>
                     </div>
                     <div className="contact-form__message has-text-content">
-                        <div className="contact-form__label has-text-content">
+                        <div className="contact-form__label has-text-content"  style={direction.direction==="rtl"? ({textAlign: "right"}): ({textAlign: "left"})}>
                             <label className="input-text-color--picker has-text-content change-custom--selection" htmlFor="contactMessage">{t("Contact.Message")}</label>
                         </div>
                         <textarea id="contactMessage" cols="30" rows="10" name={inputNames.message.name} required onChange={onChange}></textarea>

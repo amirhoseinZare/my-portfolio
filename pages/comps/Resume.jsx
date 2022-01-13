@@ -48,7 +48,7 @@ function Resume(props){
                     return (
                         <div key={project.id} className="image-item">
                             <div className="image-item__icon">
-                                <Image width={450} height={200} src={project.image} quality={100}/>
+                                <Image width={450} height={200} src={project.image} quality={100} alt="image"/>
                             </div>
                             <h1 unselectable="on" className="image-item__header has-text-content">{project.titleFa}</h1>
                             <p className="image-item__description has-text-content">{project.descriptionFa}</p>

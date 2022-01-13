@@ -1,12 +1,15 @@
 import { useTranslation } from "react-i18next"
+import { useSelector } from "react-redux"
 
 function AboutMe(props){
     const { t } = useTranslation()
+    const language = useSelector(state=>state.language.value)
+
     return (
         <section id="aboutme" >
             <h1 className="aboutme--header change-custom--selection">{t("Introduction.AboutMe")}</h1>
             <div className="aboutme">
-                <div className="aboutme--description cursor-default has-text-content">{t("AboutMe.Worked")}<span className="description-tex-color--picker has-text-content">{t("AboutMe.SuchAs")}</span>{t("AboutMe.RelatedLibraries")}<span className="headet-text-color--picker description-text--bolder has-text-content">{t("AboutMe.HighTechs")}</span>{t("AboutMe.GoodUnderstanding")}<span className="headet-text-color--picker description-text--bolder has-text-content">{t("AboutMe.RWD")}</span>{t("AboutMe.RWDTechs")}<span className="description-tex-color--picker has-text-content">{t("AboutMe.GridFlex")}</span>{t("AboutMe.Other")}<span className="headet-text-color--picker description-text--bolder has-text-content">{t("AboutMe.Bootstrap")}</span>{t("AboutMe.GoodUnderstand")}<span className="description-tex-color--picker has-text-content">{t("AboutMe.ResfulApis")}</span>{t("AboutMe.BuildTools")}<span className="headet-text-color--picker description-text--bolder has-text-content">{t("AboutMe.BabelWebpack")}</span></div>
+                <div className="aboutme--description cursor-default has-text-content" style={language==="fa"?({textAlign:"right"}):({textAlign:"left"})}>{t("AboutMe.Worked")}<span className="description-tex-color--picker has-text-content">{t("AboutMe.SuchAs")}</span>{t("AboutMe.RelatedLibraries")}<span className="headet-text-color--picker description-text--bolder has-text-content">{t("AboutMe.HighTechs")}</span>{t("AboutMe.GoodUnderstanding")}<span className="headet-text-color--picker description-text--bolder has-text-content">{t("AboutMe.RWD")}</span>{t("AboutMe.RWDTechs")}<span className="description-tex-color--picker has-text-content">{t("AboutMe.GridFlex")}</span>{t("AboutMe.Other")}<span className="headet-text-color--picker description-text--bolder has-text-content">{t("AboutMe.Bootstrap")}</span>{t("AboutMe.GoodUnderstand")}<span className="description-tex-color--picker has-text-content">{t("AboutMe.ResfulApis")}</span>{t("AboutMe.BuildTools")}<span className="headet-text-color--picker description-text--bolder has-text-content">{t("AboutMe.BabelWebpack")}</span></div>
                 <div className="aboutme--picture__person">
                     <img className="aboutme--picture__person--item" src="./images/girl.png" alt="ax" />
                 </div>

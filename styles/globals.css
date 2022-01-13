@@ -1170,6 +1170,10 @@ textarea {
   font-size: 15px;
 }
 
+button.form-contact__button.change-custom--selection {
+  font-family:"Shabnam";
+}
+
 @media (max-width: 575.98px) { 
   body {
     font-size: 14px;
