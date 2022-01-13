@@ -1,7 +1,8 @@
 import languageTypes from "../types/language";
+import variables from "../../core/variables"
 
 const INITIAL_STATE = {
-    value:"Fa"
+    value:variables.defaultLanguage
 }
 
 const languageReducer = (state=INITIAL_STATE, action) => {

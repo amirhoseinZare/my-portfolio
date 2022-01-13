@@ -62,6 +62,12 @@ const validators = {
   regex: (regex, message) => ({ type: validatorType.regex, message, regex }),
   custom: (func) => ({ type: validatorType.custom, func }),
 };
+const formatResult = (messageKey, messageArguemnts=null)=>{
+  return {
+    key:messageKey,
+    args:messageArguemnts
+  }
+}
 export default validators;
 export const validate = (val, validators, val2) => {
   let isValid = true;
@@ -76,84 +82,84 @@ export const validate = (val, validators, val2) => {
           )
             return {
               isValid: false,
-              message: i18n.t("validation.required"),
+              message: formatResult("validation.required"),
             };
           break;
         case validatorType.minCharLength:
           if (val && val.length < validator.minLength)
             return {
               isValid: false,
-              message:i18n.t("validation.minCharLength" , validator.minLength ),
+              message: formatResult("validation.minCharLength" , validator.minLength ),
             };
           break;
         case validatorType.maxCharLength:
           if (val && val.length > validator.maxLength)
             return {
               isValid: false,
-              message: i18n.t("validation.maxCharLength", validator.maxLength),
+              message: formatResult("validation.maxCharLength", validator.maxLength),
             };
           break;
         case validatorType.fixCharLength:
           if (val && val.length !== validator.length)
             return {
               isValid: false,
-              message: i18n.t("validation.fixCharLength", validator.maxLength),
+              message: formatResult("validation.fixCharLength", validator.maxLength),
             };
           break;
         case validatorType.isNumber:
           if (val && isNaN(val))
             return {
               isValid: false,
-              message: i18n.t("validation.mustBeNumber"),
+              message: formatResult("validation.mustBeNumber"),
             };
           break;
         case validatorType.fixNumberLength:
           if (val && val.length !== validator.length)
             return {
               isValid: false,
-              message: i18n.t("validation.fixNumberLength", validator.length)
+              message: formatResult("validation.fixNumberLength", validator.length)
             };
           break;
         case validatorType.minNumberLength:
           if (val && val.length < validator.minLength)
             return {
               isValid: false,
-              message: i18n.t("validation.minNumberLength", validator.minLength)
+              message: formatResult("validation.minNumberLength", validator.minLength)
             };
           break;
         case validatorType.maxNumberLength:
           if (val && val.length > validator.maxLength)
             return {
               isValid: false,
-              message: i18n.t("validation.maxNumberLength", validator.maxLength)
+              message: formatResult("validation.maxNumberLength", validator.maxLength)
             };
           break;
         case validatorType.min:
           if (val && !isNaN(val) && parseFloat(val) < validator.minValue)
             return {
               isValid: false,
-              message: i18n.t("validation.minValue", validator.minValue)
+              message: formatResult("validation.minValue", validator.minValue)
             };
           break;
         case validatorType.max:
           if (val && !isNaN(val) && parseFloat(val) > validator.maxValue)
             return {
               isValid: false,
-              message: i18n.t("validation.maxValue", validator.maxValue),
+              message: formatResult("validation.maxValue", validator.maxValue),
             };
           break;
         case validatorType.email:
           if (val && !/^\S+@\S+\.\S+$/.test(val))
             return {
               isValid: false,
-              message: i18n.t("validation.invalidEmail"),
+              message: formatResult("validation.invalidEmail"),
             };
           break;
         case validatorType.mobile:
           if (val && !/^0?9\d{9}$/.test(val))
             return {
               isValid: false,
-              message: i18n.t("validation.invalidMobileNumber"),
+              message: formatResult("validation.invalidMobileNumber"),
             };
           break;
         case validatorType.url:
@@ -165,7 +171,7 @@ export const validate = (val, validators, val2) => {
           )
             return {
               isValid: false,
-              message: i18n.t("validation.invalidUrl"),
+              message: formatResult("validation.invalidUrl"),
             };
           break;
           case validatorType.guid:
@@ -177,14 +183,14 @@ export const validate = (val, validators, val2) => {
             )
               return {
                 isValid: false,
-                message: i18n.t("validation.invalidGuid"),
+                message: formatResult("validation.invalidGuid"),
               };
             break;
         case validatorType.regex:
           if (val && !new RegExp(validator.regex).test(val))
             return {
               isValid: false,
-              message: i18n.t("validation.invalidValue"),
+              message: formatResult("validation.invalidValue"),
             };
           break;
         case validatorType.custom:

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Script from 'next/script'
 import { useEffect } from 'react';
+
 //css
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

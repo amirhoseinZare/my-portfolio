@@ -1,5 +1,6 @@
 const variables = {
     salt:"(*h@e*gd@)*rhb@r)(b@nr)(b)r(@b",
+    defaultLanguage:"en",
     request:{
         method:{
             GET:"GET",

@@ -3,9 +3,10 @@ import validators , { validate } from "../../core/validators"
 import strings from "../../core/strings"
 import { useTranslation } from "react-i18next"
 import i18n from "../../core/config/i18n"
-import LanguageService from "../../services/languageService";
+import { useSelector } from "react-redux"
 
 function Contact (){
+    const language = useSelector(state=>state.language)
     const [validated, setValidated] = useState(false)
     const { t } = useTranslation()
     const inputNames = useMemo(
@@ -59,25 +60,24 @@ function Contact (){
         initState
     );
     
-    let language = LanguageService.getCurrent()
-
     const onChange = (e) => {
         const { value, name } = e.target;
         setInput({ [name]: { value: value, error: false, message: "" } });
     };
 
     const validateModel = () => {
-        setValidated((!validated) ? true: false)
         let isValid = true;
         for (let k in inputNames) {
             let result = validate(input[k].value, inputNames[k].validators);
             if (!result.isValid) {
                 isValid = false;
                 setInput({
-                    [k]: { value: input[k].value, error: true, message: result.message },
+                    [k]: { value: input[k].value, error: true, message: t(result.message.key, result.message.args) },
                 });
             }
         }
+        if(!isValid)
+            setValidated(true)
         return isValid;
     };
 
@@ -96,12 +96,12 @@ function Contact (){
             (acc, k) => ({ ...acc, [k]: input[k].value }),
                 {}
         );
-        // console.log()
-        // addAlert(model)
+        //sen request
+        resetForm()
     }
 
     useEffect(()=>{
-        console.log(validated, language)
+        console.log(validated)
         if(!validated)
             return
         validateModel()
@@ -130,7 +130,7 @@ function Contact (){
                             <label htmlFor="form-contact__title" className="input-text-color--picke has-text-contentr change-custom--selection" style={{ color: 'var(--header-bg-colour)'}}>{t("Contact.Phone")}</label>
                         </div>
                         <div className="contact-form__title--items" style={{direction: "ltr !important"}}>
-                            <input id="form-contact__title" type="phone" className="form-contact__title" name={inputNames.mobile.name} required onChange={onChange} />
+                            <input id="form-contact__title" type="number" className="form-contact__title" name={inputNames.mobile.name} required onChange={onChange} />
                             {input.mobile.error && <div className="form-invalid--feedback">{input.mobile.message}</div>}
                         </div>
                     </div>
