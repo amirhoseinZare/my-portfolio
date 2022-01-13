@@ -1,4 +1,5 @@
 const variables = {
+    salt:"(*h@e*gd@)*rhb@r)(b@nr)(b)r(@b",
     request:{
         method:{
             GET:"GET",
@@ -16,7 +17,7 @@ const variables = {
     general:{
         unknownIp:"unknown",
         unknownUserAgent:"unknown"
-    }
+    },
 }
 
 export default variables

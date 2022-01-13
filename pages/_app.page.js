@@ -1,3 +1,4 @@
+import 'animate.css';
 import '../styles/globals.css'
 // import '../styles/bootstrap.css'
 // import '../styles/slicker.css'

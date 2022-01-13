@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
-
+import { useEffect } from 'react';
 //css
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -23,8 +23,13 @@ import Customize from "./comps/Customize.jsx"
 import {connectToDB} from "../server/db"
 import {getAllSkills} from "../services/skillService.js"
 import {getAllProjects} from "../services/projectService.js"
+import LanguageService from '../services/languageService'
 
 export default function Home(props) {
+
+  useEffect(()=>{
+  }, [])
+
   return (
     <main>
 

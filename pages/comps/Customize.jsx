@@ -1,5 +1,5 @@
-import { lang } from "../../core/config"
 import { useTranslation } from "react-i18next"
+import LanguageService from "../../services/languageService"
 
 function Customize(){
     const { t } = useTranslation()
@@ -17,10 +17,10 @@ function Customize(){
             </div>
             <div className="customize-language">
                 <div className="lang--items">
-                    <div onClick={()=>lang.toEn()} className="lang--item">
+                    <div onClick={()=>LanguageService.toEn()} className="lang--item">
                         <img className="lang-item--icon selected-custom--item" data-lang="en" src="./images/en.png" alt="Fa" />
                     </div>
-                    <div onClick={()=>lang.toFa()} className="lang--item">
+                    <div onClick={()=>LanguageService.toFa()} className="lang--item">
                         <img className="lang-item--icon" data-lang="fa" src="./images/fa.png" alt="En" />
                     </div>
                 </div>

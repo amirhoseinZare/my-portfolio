@@ -61,5 +61,30 @@
     "Customize":{
         "Language":"language",
         "ColorTheme":"color theme"
+    },
+    "validation": {
+        "required": "this field is required",
+        "mustBeNumber": "this field must be a number",
+        "invalidMobileNumber": "invalid mobile number",
+        "invalidDate": "invalid date format",
+        "invalidEmail": "invalud email format",
+        "invalidNationalCode": "invalid national code",
+        "passwordInvalidLength": "گذروازه باید حداقل 5 کاراکتر داشته باشد",
+        "incorrectRepeatPassword": "تکرار گذروازه اشتباه است",
+        "invalidGuid": "شناسه مربوطه صحیح نمی باشد",
+        "invalidUrl": "آدرس اینترنتی صحیح نمی باشد",
+        "invalidValue": "ورودی با الگو مطابقت ندارد",
+        "minCharLength": "حداقل تعداد حروف {{length}} می باشد",
+        "maxCharLength": "حداکثر تعداد حروف {{length}} می باشد",
+        "fixCharLength": "مقدار باید شامل {{length}} حرف باشد",
+        "minNumberLength": "حداقل {{length}} رقم لازم است",
+        "maxNumberLength": "حداکثر {{length}} رقم لازم است",
+        "fixNumberLength": "مقدار باید شامل {{length}} رقم باشد",
+        "minValue": "حداقل مقدار ممکن  {{val}} می باشد",
+        "maxValue": "حداکثر مقدار ممکن  {{val}} می باشد",
+        "maxFileSizeExceeded": "حداکثر حجم فایل {{size}} مگابایت می باشد",
+        "maxFileCountExceeded": "حداکثر تعداد فایل ها {{count}} می باشد",
+        "atleastOneFileRequired": "حداقل یک فایل مورد نیاز است",
+        "fileFormatNotAccepted": "فرمت فایل می بایست یکی از این موارد باشد {{formates}}"
     }
 }
