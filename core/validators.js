@@ -1,3 +1,4 @@
+import i18n from "./config/i18n/index"
 import strings from "./strings";
 
 const validatorType = {
@@ -75,7 +76,7 @@ export const validate = (val, validators, val2) => {
           )
             return {
               isValid: false,
-              message: validator.message || strings.validation.required,
+              message: validator.message || i18n.t("validation.required"),
             };
           break;
         case validatorType.minCharLength:
@@ -84,7 +85,7 @@ export const validate = (val, validators, val2) => {
               isValid: false,
               message: validator.message
                 ? validator.message(validator.minLength)
-                : strings.validation.minCharLength(validator.minLength),
+                : i18n.t("validation.minCharLength" , validator.minLength ),
             };
           break;
         case validatorType.maxCharLength:
@@ -93,7 +94,7 @@ export const validate = (val, validators, val2) => {
               isValid: false,
               message: validator.message
                 ? validator.message(validator.maxLength)
-                : strings.validation.maxCharLength(validator.maxLength),
+                : i18n.t("validation.maxCharLength", validator.maxLength),
             };
           break;
         case validatorType.fixCharLength:
@@ -102,14 +103,14 @@ export const validate = (val, validators, val2) => {
               isValid: false,
               message: validator.message
                 ? validator.message(validator.length)
-                : strings.validation.fixCharLength(validator.length),
+                : i18n.t("validation.fixCharLength", validator.maxLength),
             };
           break;
         case validatorType.isNumber:
           if (val && isNaN(val))
             return {
               isValid: false,
-              message: validator.message || strings.validation.mustBeNumber,
+              message: validator.message || i18n.t("validation.mustBeNumber"),
             };
           break;
         case validatorType.fixNumberLength:
@@ -118,7 +119,7 @@ export const validate = (val, validators, val2) => {
               isValid: false,
               message: validator.message
                 ? validator.message(validator.length)
-                : strings.validation.fixNumberLength(validator.length),
+                : i18n.t("validation.fixNumberLength", validator.length)
             };
           break;
         case validatorType.minNumberLength:
@@ -127,7 +128,7 @@ export const validate = (val, validators, val2) => {
               isValid: false,
               message: validator.message
                 ? validator.message(validator.minLength)
-                : strings.validation.minNumberLength(validator.minLength),
+                : i18n.t("validation.minNumberLength", validator.minLength)
             };
           break;
         case validatorType.maxNumberLength:
@@ -136,7 +137,7 @@ export const validate = (val, validators, val2) => {
               isValid: false,
               message: validator.message
                 ? validator.message(validator.maxLength)
-                : strings.validation.maxNumberLength(validator.maxLength),
+                : i18n.t("validation.maxNumberLength", validator.maxLength)
             };
           break;
         case validatorType.min:
@@ -145,7 +146,7 @@ export const validate = (val, validators, val2) => {
               isValid: false,
               message: validator.message
                 ? validator.message(validator.minValue)
-                : strings.validation.minValue(validator.minValue),
+                :  i18n.t("validation.minValue", validator.minValue)
             };
           break;
         case validatorType.max:
@@ -154,14 +155,14 @@ export const validate = (val, validators, val2) => {
               isValid: false,
               message: validator.message
                 ? validator.message(validator.maxValue)
-                : strings.validation.maxValue(validator.maxValue),
+                : i18n.t("validation.maxValue", validator.maxValue),
             };
           break;
         case validatorType.email:
           if (val && !/^\S+@\S+\.\S+$/.test(val))
             return {
               isValid: false,
-              message: validator.message || strings.validation.invalidEmail,
+              message: validator.message || i18n.t("validation.invalidEmail"),
             };
           break;
         case validatorType.mobile:
@@ -169,7 +170,7 @@ export const validate = (val, validators, val2) => {
             return {
               isValid: false,
               message:
-                validator.message || strings.validation.invalidMobileNumber,
+                validator.message || i18n.t("validation.invalidMobileNumber"),
             };
           break;
         case validatorType.url:
@@ -181,7 +182,7 @@ export const validate = (val, validators, val2) => {
           )
             return {
               isValid: false,
-              message: validator.message || strings.validation.invalidUrl,
+              message: validator.message || i18n.t("validation.invalidUrl"),
             };
           break;
           case validatorType.guid:
@@ -193,14 +194,14 @@ export const validate = (val, validators, val2) => {
             )
               return {
                 isValid: false,
-                message: validator.message || strings.validation.invalidGuid,
+                message: validator.message || i18n.t("validation.invalidGuid"),
               };
             break;
         case validatorType.regex:
           if (val && !new RegExp(validator.regex).test(val))
             return {
               isValid: false,
-              message: validator.message || strings.validation.invalidValue,
+              message: validator.message || i18n.t("validation.invalidValue"),
             };
           break;
         case validatorType.custom:
